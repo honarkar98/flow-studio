@@ -1,0 +1,254 @@
+:root{font-family:Vazirmatn,Tahoma,Arial,sans-serif;color:#282828;background:#f5f5f5;font-size:14px;color-scheme:light;--ink:#282828;--muted:#808080;--line:#e5e5e5;--purple:#555555;--purple-light:#efefef;--teal:#747474;--red:#6b6b6b;--shadow:0 12px 36px #2828280e}*{box-sizing:border-box}body{margin:0;min-height:100vh}button,input,select,textarea{font:inherit}[hidden]{display:none!important}button{border:1px solid #dedede;border-radius:10px;background:#ffffff;color:#434343;padding:9px 13px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;white-space:nowrap}button:hover{background:#f3f3f3;border-color:#b7b7b7}button:active{transform:translateY(1px)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #a5a5a5;outline-offset:2px}button.primary{background:#606060;border-color:#606060;color:#ffffff;box-shadow:0 5px 12px #60606033}button.primary:hover{background:#4e4e4e}.danger{color:#595959}.softButton{background:#f1f1f1;color:#555555;border-color:#dfdfdf}.quiet{border:0;background:transparent}.iconButton{width:34px;height:34px;display:grid;place-items:center;padding:0;font-size:20px}.topbar{height:70px;position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:22px;padding:10px 22px;background:#ffffff;border-bottom:1px solid var(--line);box-shadow:0 3px 16px #2b2b2b08}.brand{display:flex;align-items:center;gap:11px;min-width:216px}.brandIcon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#606060;color:#ffffff;font-size:30px;line-height:1}.brand strong{display:block;font-size:17px;line-height:1.2}.brand small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.topProject{display:flex;align-items:end;gap:7px}.topProject label{display:flex;align-items:center;gap:9px;margin:0}.topProject select{min-width:220px}.topbar #toast{margin-right:auto;max-width:43%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#676767}.topbar #toast.error{color:var(--red)}.drawerToggle{background:#f2f2f2;color:#555555}.workspace{display:grid;grid-template-columns:minmax(240px,275px) minmax(440px,1fr) minmax(300px,340px);gap:18px;padding:18px;align-items:start}.sidebar,.center,.rightbar{min-width:0;display:grid;gap:18px}.panel{background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);min-width:0}.sectionTitle{display:flex;align-items:start;justify-content:space-between;gap:10px;margin-bottom:10px}.sectionTitle h2,h2{font-size:17px;margin:0;line-height:1.5}.eyebrow{display:block;font-size:10px;letter-spacing:.13em;color:#707070;font-weight:800;margin-bottom:3px;direction:ltr;text-align:right}.decorIcon{color:#989898;font-size:25px}.hint{font-size:12px;line-height:1.65;color:var(--muted);margin:8px 0}.divider{height:1px;background:var(--line);margin:16px 0}label{display:grid;gap:6px;margin:10px 0;color:#565656;font-size:12px;font-weight:700}input,select,textarea{width:100%;border:1px solid #dbdbdb;border-radius:9px;padding:9px 10px;background:#ffffff;color:var(--ink);outline:0}input:focus,select:focus,textarea:focus{border-color:#8a8a8a;box-shadow:0 0 0 3px #8a8a8a1c}textarea{resize:vertical;min-height:48px}.code,code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;direction:ltr;text-align:left}.code{background:#f8f8f8;line-height:1.55}.output{white-space:pre-wrap;overflow-wrap:anywhere;max-height:230px;overflow:auto;margin:12px 0 0}.row{display:flex;align-items:end;gap:9px;flex-wrap:wrap}.row>label{flex:1;min-width:130px}.row.compact{align-items:center}.checkbox{display:flex;align-items:center;gap:7px;cursor:pointer;font-weight:500}.checkbox input{width:auto;accent-color:#606060}.checkbox.small{font-size:11px;margin:0}.badge{display:inline-flex;align-items:center;border-radius:30px;background:#efefef;color:#5f5f5f;padding:5px 10px;font-size:11px;font-weight:700;white-space:nowrap}summary{color:#5e5e5e;font-weight:700;cursor:pointer;margin:10px 0}.projectPanel>button,.projectPanel details button{width:100%}.projectPanel input[type=file]{font-size:11px}.operations .scroll{max-height:55vh;overflow:auto;display:grid;gap:5px}.operation{border:1px solid #ededed;border-radius:10px;padding:9px;cursor:grab;background:#ffffff}.operation:hover{background:#f9f9f9;border-color:#c8c8c8}.operation small{display:block;color:#8b8b8b;margin-top:5px}.method{display:inline-block;min-width:48px;border-radius:5px;padding:3px 5px;background:#f3f3f3;color:#686868;font:800 11px ui-monospace,monospace;text-align:center;direction:ltr}.method.POST{background:#f4f4f4;color:#777777}.method.DELETE{background:#ececec;color:#5c5c5c}.method.PATCH,.method.PUT{background:#ededed;color:#686868}.path{font-family:ui-monospace,monospace;font-size:11px;direction:ltr;unicode-bidi:plaintext;overflow-wrap:anywhere}.missing{opacity:.52}.guide{background:linear-gradient(125deg,#f4f4f4,#ffffff 65%);border-color:#dadada}.guideSteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:15px 0 6px}.guideItem{display:grid;align-content:start;gap:5px;min-height:98px;padding:11px;border:1px solid #e3e3e3;background:#ffffff;border-radius:11px}.guideItem.done{border-color:#d0d0d0;background:#fdfdfd}.guideIndex{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#ececec;color:#636363}.guideItem.done .guideIndex{background:#898989;color:#ffffff}.guideItem strong{font-size:12px}.guideItem small{font-size:11px;line-height:1.5;color:var(--muted)}.flowToolbar{padding:18px 19px}.flowToolbarTop{display:flex;justify-content:space-between;align-items:center;gap:14px}.flowControls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.newFlowDetails{border-top:1px solid var(--line);margin-top:8px}.newFlowDetails .row{padding:8px 0}.flowActions{display:flex;flex-wrap:wrap;align-items:center;gap:7px;border-top:1px solid var(--line);padding-top:14px;margin-top:10px}.flowActions .primary{margin-right:auto}.viewSwitch{display:flex;gap:3px;background:#f2f2f2;border:1px solid #e6e6e6;border-radius:11px;padding:3px}.viewSwitch button{border:0;background:transparent;font-size:12px;padding:8px 11px}.viewSwitch button[aria-pressed=true]{background:#ffffff;color:#575757;box-shadow:0 2px 8px #35353518}.listPanel{min-height:240px}.steps{display:grid;gap:8px;margin-top:16px}.step{display:flex;align-items:center;gap:7px;padding:11px;background:#fbfbfb;border:1px solid #e7e7e7;border-radius:11px;transition:border-color .15s,background .15s}.step:hover{border-color:#b4b4b4}.step.selected{background:#f4f4f4;border-color:#8a8a8a;box-shadow:inset 3px 0 #6f6f6f}.step.current{box-shadow:inset 3px 0 #aaaaaa}.step.done{background:#fbfbfb}.step.schemaChanged{border-color:#bcbcbc;background:#fafafa}.stepText{flex:1;min-width:0;cursor:pointer;font-weight:700}.stepText small{display:block;margin-top:4px;font-weight:400;color:#828282;direction:ltr;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.step button{padding:5px 8px;font-size:11px}.quickBuilder{border:1px solid #e4e4e4;background:#fbfbfb;border-radius:12px;padding:13px;margin:14px 0}.quickBuilder h3,.routeFields h3{font-size:14px;margin:0 0 4px;color:#424242}.quickBuilder .row>button,.uploadBox .row>button{margin-bottom:10px}.quickBuilder label{margin:7px 0}.quickBuilder code{background:#f0f0f0;border-radius:3px;padding:1px 4px}.ruleList{display:grid;gap:6px;margin-top:9px}.rule{display:flex;align-items:center;gap:8px;padding:7px 9px;background:#ffffff;border:1px solid #e8e8e8;border-radius:8px;font-size:12px}.rule span{flex:1;overflow-wrap:anywhere;direction:ltr;text-align:left;unicode-bidi:plaintext}.rule button{padding:3px 8px;font-size:11px}.uploadBox{border:1px dashed #b1b1b1;border-radius:12px;padding:12px;margin:14px 0;background:#fcfcfc}.advanced{border-top:1px solid var(--line);margin-top:16px;padding-top:4px}.routeFields{border-top:1px solid var(--line);padding-top:16px;margin-top:15px}.routeRow{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:12px}.stepActions{border-top:1px solid var(--line);padding-top:15px;margin-top:15px}.variable{display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0f0f0;padding:9px 0}.variable span{flex:1;min-width:0;overflow-wrap:anywhere;cursor:pointer}.variable code{display:block;color:#848484;overflow-wrap:anywhere}.variable button{font-size:11px;padding:5px 7px}.runProgress{margin:6px 0 14px}.runProgress:empty{display:none}.progressLabels{display:flex;justify-content:space-between;color:#606060;font-size:12px;margin-bottom:7px}.progressTrack{height:8px;background:#ededed;border-radius:20px;overflow:hidden}.progressTrack span{display:block;height:100%;background:linear-gradient(90deg,#6b6b6b,#8c8c8c);transition:width .3s}.runProgress small{display:block;margin-top:7px;color:var(--muted)}#runStatus[data-status=completed]{background:#f2f2f2;color:#6f6f6f}#runStatus[data-status=failed]{background:#efefef;color:#5d5d5d}#runStatus[data-status=waiting]{background:#f4f4f4;color:#6e6e6e}.rightbar button#startRunBtn,.rightbar button#advanceBtn{width:100%}.rightbar button#advanceBtn{margin-top:8px}.drawerHead{display:none}.exchange{border:1px solid #e5e5e5;border-radius:12px;margin:11px 0;background:#fcfcfc;overflow:hidden}.exchange header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#f3f3f3;padding:9px;font-size:11px}.exchange header strong{margin-right:auto}.exchange header button{padding:4px 7px;font-size:10px}.exchange .url{padding:9px;direction:ltr;text-align:left;overflow-wrap:anywhere;font:11px ui-monospace,monospace}.exchange details{border-top:1px solid #eaeaea;padding:6px 10px}.exchange pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto;padding:10px;border-radius:7px;background:#f8f8f8;direction:ltr;text-align:left;font-size:11px}.errorDetail{padding:10px;background:#f3f3f3;color:#595959;font-size:11px;line-height:1.6;overflow-wrap:anywhere}.errorDetail strong{display:block;font-size:12px}.appDialog{border:1px solid #dcdcdc;border-radius:18px;padding:22px;width:min(94vw,520px);max-height:88vh;overflow:auto;box-shadow:0 26px 80px #28282855}.appDialog::backdrop{background:#1c1c1ca8;backdrop-filter:blur(4px)}.dialogHead{display:flex;justify-content:space-between;align-items:start}.dialogActions{display:flex;gap:8px;justify-content:flex-end;margin-top:17px}.curlDialog{width:min(94vw,750px)}.curlDialog pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border:1px solid var(--line);border-radius:11px;max-height:55vh;overflow:auto}.diagramMode{background:#ffffff;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:var(--shadow)}.diagramToolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 21px;border-bottom:1px solid var(--line)}.diagramToolbar p{font-size:11px;color:var(--muted);margin:4px 0}.diagramActions{display:flex;gap:7px;flex-wrap:wrap}.diagramViewport{height:min(72vh,850px);min-height:570px;overflow:auto;background-color:#fbfbfb;background-image:radial-gradient(#d3d3d3 1px,transparent 1px);background-size:19px 19px}.diagramCanvas{position:relative;width:1200px;height:630px}.diagramLinks{position:absolute;inset:0;overflow:visible;pointer-events:none}.diagramLink{fill:none;stroke:#787878;stroke-width:2.5;filter:drop-shadow(0 2px 1px #bdbdbd)}.diagramLink.link-no,.diagramLink.link-error{stroke:#898989}.diagramLink.link-body{stroke:#848484}.diagramEmpty{position:absolute;top:175px;right:230px;width:320px;text-align:center;color:#8d8d8d}.diagramEmpty span{display:block;font-size:58px;color:#a2a2a2}.diagramEmpty strong{display:block;color:#5f5f5f;font-size:17px}.diagramEmpty p{font-size:12px}.diagramNode{position:absolute;width:265px;min-height:182px;background:#ffffff;border:1px solid #e0e0e0;border-radius:13px;box-shadow:0 11px 23px #3d3d3d20;overflow:hidden;z-index:2;cursor:pointer;user-select:none}.diagramNode.selected{border-color:#737373;box-shadow:0 0 0 3px #a6a6a651,0 11px 23px #3d3d3d20}.diagramNode.current{outline:2px solid #b1b1b1}.diagramNode.moving{z-index:5;box-shadow:0 20px 45px #3d3d3d55}.diagramNode.connectTarget{outline:2px dashed #6c6c6c}.diagramNodeHead{display:flex;align-items:center;gap:8px;padding:10px 11px;background:#f1f1f1;cursor:grab}.diagramNode.manual .diagramNodeHead{background:#f3f3f3}.diagramNode.condition .diagramNodeHead{background:#f3f3f3}.diagramNode.foreach .diagramNodeHead{background:#f5f5f5}.diagramNodeHead b{font-size:10px;border-radius:5px;padding:4px 6px;background:#ffffff;color:#717171;white-space:nowrap}.diagramNodeHead strong{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.diagramNodeSummary{display:block;direction:ltr;text-align:left;padding:13px 12px;color:#737373;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.diagramNodeActions{display:flex;gap:5px;padding:0 11px 10px}.diagramNodeActions button{font-size:10px;padding:5px 8px}.diagramPorts{border-top:1px solid #ebebeb;display:flex;justify-content:space-between;gap:5px;padding:9px 11px}.diagramPort{padding:4px 6px;font-size:10px;color:#6c6c6c;border:0;background:#f3f3f3}.diagramPort.port-error,.diagramPort.port-no{color:#6d6d6d;background:#f3f3f3}.diagramPort.port-body{color:#727272;background:#f5f5f5}.diagramLegend{display:flex;gap:16px;align-items:center;padding:10px 20px;font-size:10px;color:#828282;border-top:1px solid var(--line)}.diagramLegend i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#939393;margin-left:4px}.diagramLegend .legendManual{background:#adadad}.diagram-view.workspace{grid-template-columns:minmax(225px,270px) minmax(0,1fr)}.diagram-view .rightbar{position:fixed;top:80px;left:15px;bottom:15px;z-index:24;width:min(390px,calc(100vw - 30px));overflow:auto;background:#f7f7f7;padding:10px;border:1px solid var(--line);border-radius:16px;box-shadow:0 22px 70px #28282844;transform:translateX(calc(-100% - 50px));transition:transform .2s}.diagram-view .rightbar.drawerOpen{transform:translateX(0)}.diagram-view .drawerHead{display:flex;align-items:center;justify-content:space-between;padding:4px 7px}.diagram-view #stepPanel{display:none;position:fixed;top:80px;right:298px;bottom:15px;z-index:23;width:min(470px,calc(100vw - 315px));overflow:auto;box-shadow:0 20px 70px #2828284a}.diagram-view #stepPanel.inspectorOpen{display:block}#schemaDiff{white-space:pre-line}@media(max-width:1250px){.workspace{grid-template-columns:240px minmax(0,1fr)}.rightbar{grid-column:1/-1;grid-template-columns:1fr 1fr}.timelinePanel{grid-column:1/-1}.diagram-view #stepPanel{right:260px}}@media(max-width:800px){.workspace,.diagram-view.workspace{display:block;padding:10px}.sidebar,.center,.rightbar{display:grid;margin-bottom:12px}.panel{padding:15px}.guideSteps{grid-template-columns:repeat(2,1fr)}.flowControls{grid-template-columns:1fr}.flowToolbarTop{flex-wrap:wrap}.topbar{height:auto;flex-wrap:wrap;padding:9px}.brand{min-width:0}.topProject{flex:1}.topProject select{min-width:100px}.topbar #toast{max-width:100%;width:100%;margin:0}.diagram-view #stepPanel{right:10px;left:10px;top:85px;width:auto}.diagram-view .rightbar{top:85px}.routeRow{grid-template-columns:1fr}.diagramToolbar{display:block}.diagramActions{margin-top:12px}.diagramViewport{min-height:520px}}
+.diagramNodeMeta{display:flex;flex-wrap:wrap;gap:4px;padding:0 11px 8px}.diagramNodeMeta:empty{display:none}.diagramNodeMeta span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:5px;padding:3px 5px;background:#f4f4f4;color:#636363;font:10px Tahoma,Arial,sans-serif}.variable code{max-height:58px;overflow:hidden}.diagramNodeHead{touch-action:none}
+
+/* Monochrome visual system and physical left-to-right canvas coordinates. */
+:root{color:#181818;background:#f4f4f4;--ink:#181818;--muted:#717171;--line:#dedede;--purple:#202020;--purple-light:#f0f0f0;--teal:#333333;--red:#565656;--shadow:0 10px 30px #0000000b}
+body{background:#f4f4f4}
+button{color:#242424;border-color:#d7d7d7;background:#fff}
+button:hover{background:#f1f1f1;border-color:#a5a5a5}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline-color:#858585}
+button.primary{background:#1d1d1d;border-color:#1d1d1d;color:#fff;box-shadow:0 4px 14px #00000022}
+button.primary:hover{background:#383838;border-color:#383838}
+.softButton,.drawerToggle{background:#ededed;color:#252525;border-color:#d7d7d7}
+.topbar{background:#181818;border-color:#181818;box-shadow:0 4px 18px #00000016}
+.topbar .brand,.topbar .brand strong,.topbar .brand small,.topbar .topProject label{color:#f6f6f6}
+.topbar .brandIcon{background:#f5f5f5;color:#191919;border-radius:11px}
+.topbar #toast{color:#e5e5e5}
+.topbar #toast.error{color:#fff}
+.topbar select{background:#333;color:#fff;border-color:#555}
+.topbar button{background:#343434;border-color:#555;color:#fff}
+.topbar button:hover{background:#4a4a4a;border-color:#777}
+.panel,.diagramMode{border-color:#e1e1e1;box-shadow:var(--shadow)}
+.panel{border-radius:15px}
+.eyebrow,.decorIcon{color:#777}
+label{color:#484848}
+input,select,textarea{border-color:#d6d6d6;color:#202020}
+input:focus,select:focus,textarea:focus{border-color:#565656;box-shadow:0 0 0 3px #00000010}
+.checkbox input{accent-color:#272727}
+.badge{background:#eeeeee;color:#333}
+summary{color:#333}
+.method,.method.POST,.method.DELETE,.method.PATCH,.method.PUT{background:#ebebeb;color:#292929;border:1px solid #d8d8d8}
+.method.POST{background:#d8d8d8}
+.method.DELETE{background:#ededed;border-style:dashed}
+.guide{background:linear-gradient(135deg,#efefef,#fff 70%);border-color:#ddd}
+.guideItem.done{background:#f0f0f0;border-color:#b9b9b9}
+.guideIndex,.guideItem.done .guideIndex{background:#252525;color:#fff}
+.viewSwitch{background:#ebebeb;border-color:#d9d9d9}
+.viewSwitch button[aria-pressed=true]{background:#fff;color:#111;box-shadow:0 2px 6px #00000018}
+.step.selected{background:#f1f1f1;border-color:#585858;box-shadow:inset 3px 0 #222}
+.step.current{box-shadow:inset 3px 0 #666}
+.step.done{background:#f5f5f5}
+.step.schemaChanged{background:#f2f2f2;border-color:#999}
+.operation:hover{background:#f3f3f3;border-color:#9d9d9d}
+.quickBuilder{background:#f8f8f8;border-color:#dedede}
+.quickBuilder h3,.routeFields h3{color:#222}
+.quickBuilder code{background:#ededed}
+.progressTrack{background:#e4e4e4}
+.progressTrack span{background:#292929}
+#runStatus[data-status=completed]{background:#e6e6e6;color:#202020}
+#runStatus[data-status=failed]{background:#d1d1d1;color:#181818}
+#runStatus[data-status=waiting]{background:#eee;color:#444}
+.exchange{background:#fff;border-color:#ddd}
+.exchange header{background:#f0f0f0}
+.exchange pre,.code{background:#f7f7f7}
+.errorDetail{background:#ebebeb;color:#242424;border-right:3px solid #4b4b4b}
+.appDialog{border-color:#d3d3d3;box-shadow:0 28px 85px #00000045}
+.appDialog::backdrop{background:#00000099}
+.diagramViewport{direction:ltr;background-color:#fafafa;background-image:radial-gradient(#d3d3d3 1px,transparent 1px)}
+.diagramCanvas,.diagramLinks{direction:ltr}
+.diagramNode{direction:rtl;border-color:#d1d1d1;box-shadow:0 9px 25px #00000019}
+.diagramNode.selected{border-color:#333;box-shadow:0 0 0 3px #00000016,0 11px 25px #0000001c}
+.diagramNode.current{outline:2px solid #656565}
+.diagramNode.moving{box-shadow:0 20px 42px #00000033}
+.diagramNode.connectTarget{outline:2px dashed #333}
+.diagramNodeHead{background:#ededed}
+.diagramNode.manual .diagramNodeHead{background:#f4f4f4}
+.diagramNode.condition .diagramNodeHead{background:#e6e6e6}
+.diagramNode.foreach .diagramNodeHead{background:#dedede}
+.diagramNodeHead b{color:#222;border:1px solid #d5d5d5}
+.diagramNodeSummary{color:#606060}
+.diagramNodeMeta span{background:#efefef;color:#444;border:1px solid #e1e1e1}
+.diagramPort,.diagramPort.port-error,.diagramPort.port-no,.diagramPort.port-body{background:#f1f1f1;color:#262626}
+.diagramPort:hover{background:#dedede}
+.diagramLink,.diagramLink.link-body{stroke:#252525;filter:none}
+.diagramLink.link-no,.diagramLink.link-error{stroke:#777;stroke-dasharray:5 4}
+.diagramLegend i,.diagramLegend .legendManual{background:#4a4a4a}
+.diagramEmpty span,.diagramEmpty strong{color:#444}
+.diagram-view .rightbar{background:#f8f8f8;box-shadow:0 22px 70px #00000037}
+.diagram-view #stepPanel{box-shadow:0 20px 70px #00000035}
+.diagramConnectionHint{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 19px;background:#222;color:#fff;font-size:12px;line-height:1.6}
+.diagramConnectionHint button{background:#fff;color:#222;border-color:#bbb;padding:6px 10px;font-size:11px}
+.diagramNode{overflow:visible}
+.diagramNodeHead{border-radius:12px 12px 0 0}
+.diagramNode.connectSource{border-color:#111;box-shadow:0 0 0 3px #00000024,0 12px 26px #0000001c}
+.diagramNode.connectTarget{border-color:#444;background:#fcfcfc;outline:2px dashed #444;outline-offset:4px}
+.diagramNode.connectTarget .diagramInput{background:#222;color:#fff;border-color:#222;transform:scale(1.18)}
+.diagramInput{position:absolute;top:68px;right:-11px;display:grid;place-items:center;width:23px;height:23px;padding:0;border:2px solid #333;border-radius:50%;background:#fff;color:#222;font-size:14px;line-height:1;z-index:4;box-shadow:0 2px 6px #00000024}
+.diagramPorts{display:grid;gap:5px;direction:rtl}
+.diagramPortRow{display:flex;align-items:center;gap:5px;min-width:0}
+.diagramPort{position:relative;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:right;white-space:nowrap;padding:6px 9px 6px 19px;border:1px solid #dfdfdf;border-radius:7px;background:#f5f5f5;color:#272727}
+.diagramPort::after{content:'';position:absolute;left:5px;top:50%;transform:translateY(-50%);width:7px;height:7px;border:1px solid #333;border-radius:50%;background:#fff}
+.diagramDisconnect{flex:none;width:24px;height:26px;padding:0;border:1px solid #ddd;border-radius:7px;background:#fff;color:#555;font-size:17px;line-height:1}
+.diagramDisconnect:hover{background:#dedede;color:#111}
+
+/* Constrained application shell with a persistent right sidebar. */
+body{overflow-x:hidden}
+.topbar{padding:0 18px}
+.topbarInner{width:100%;max-width:1480px;min-height:70px;margin-inline:auto;display:flex;align-items:center;gap:20px}
+.topbarInner #toast{margin-right:auto;min-width:0}
+.workspace,.diagram-view.workspace{width:calc(100% - 36px);max-width:1480px;margin:0 auto;padding:20px 0 46px;gap:16px;grid-template-columns:266px minmax(0,1fr) 292px}
+.diagram-view.workspace{grid-template-columns:266px minmax(0,1fr)}
+.sidebar{position:sticky;top:86px;align-self:start;max-height:calc(100vh - 106px);min-width:0;overflow-y:auto;display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid #dedede;border-radius:17px;box-shadow:0 10px 28px #0000000b;padding:10px}
+.sidebar .panel{background:transparent;border:0;border-top:1px solid #ebebeb;border-radius:0;box-shadow:none;padding:17px 9px}
+.sidebar .operations .scroll{max-height:38vh}
+.sidebarNav{display:grid;gap:4px;padding:9px 4px 15px}
+.sidebarNav .eyebrow{padding:0 10px;margin-bottom:6px}
+.sidebarNav button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;text-align:right;border:0;border-radius:9px;background:transparent;color:#505050;font-size:12px;font-weight:700}
+.sidebarNav button:hover{background:#f1f1f1;color:#171717}
+.sidebarNav button.active{background:#202020;color:#fff}
+.sidebarNav button.active:hover{background:#303030;color:#fff}
+.sidebarStepNav{border-top:1px solid #ebebeb;padding:15px 6px 14px}
+.sidebarStepNav .sectionTitle{align-items:center;padding:0 6px}
+.sidebarStepNav .sectionTitle strong{font-size:12px}
+#sidebarStepList{display:grid;gap:3px;max-height:210px;overflow:auto;padding:3px 2px}
+#sidebarStepList button{width:100%;overflow:hidden;text-overflow:ellipsis;text-align:right;border:0;background:transparent;color:#616161;padding:8px 10px;border-radius:8px;font-size:11px}
+#sidebarStepList button:hover{background:#f1f1f1;color:#222}
+#sidebarStepList button.active{background:#eaeaea;color:#111;font-weight:800}
+.center{gap:14px}
+.guide{padding:14px 17px}
+.guideSteps{margin:8px 0 0}
+.guideItem{min-height:72px;padding:8px 10px}
+.guide .hint{margin:7px 0 0}
+.flowToolbar{scroll-margin-top:86px}
+.diagramToolbar{padding:15px 18px}
+.diagramToolbar h2{font-size:17px}
+.diagramToolbar p{margin-top:2px}
+.diagramActions{align-items:center}
+.diagramPager{display:flex;align-items:center;gap:5px;padding:3px;border:1px solid #dedede;border-radius:10px;background:#f5f5f5;white-space:nowrap}
+.diagramPager button{border:0;background:transparent;padding:5px 9px;font-size:17px;line-height:1;color:#222}
+.diagramPager button:disabled{opacity:.3;cursor:default}
+.diagramPager span{min-width:76px;text-align:center;font-size:11px;font-weight:700;color:#555}
+.diagramViewport{height:460px;min-height:460px;max-height:min(64vh,650px);scrollbar-color:#aaa #ececec;scrollbar-width:thin}
+.diagramNode.inFocus{box-shadow:0 0 0 2px #444,0 10px 26px #0000001e}
+.diagramNode.selected.inFocus{box-shadow:0 0 0 3px #222,0 10px 26px #0000001e}
+.diagram-view .rightbar{left:max(16px,calc((100vw - 1480px)/2 + 12px));background:#fff}
+.diagram-view #stepPanel{right:calc(max(16px,(100vw - 1480px)/2) + 292px);width:min(470px,calc(100vw - 330px))}
+@media(max-width:1350px){
+  .workspace:not(.diagram-view){grid-template-columns:250px minmax(0,1fr)}
+  .workspace:not(.diagram-view) .rightbar{grid-column:2;display:grid;grid-template-columns:1fr 1fr}
+  .workspace:not(.diagram-view) .rightbar .timelinePanel{grid-column:1/-1}
+  .diagram-view.workspace{grid-template-columns:250px minmax(0,1fr)}
+  .diagram-view #stepPanel{right:282px}
+}
+@media(max-width:900px){
+  .workspace,.diagram-view.workspace,.workspace:not(.diagram-view){display:block;width:calc(100% - 24px);padding:12px 0}
+  .sidebar{position:static;max-height:none;margin-bottom:14px}
+  .sidebar .operations .scroll{max-height:220px}
+  .center,.rightbar{display:grid;gap:12px;margin-bottom:12px}
+  .workspace:not(.diagram-view) .rightbar{display:grid;grid-template-columns:1fr}
+  .workspace:not(.diagram-view) .rightbar .timelinePanel{grid-column:auto}
+  .diagram-view #stepPanel{right:12px;left:12px;top:82px;width:auto}
+  .diagram-view .rightbar{left:12px;top:82px}
+  .topbarInner{flex-wrap:wrap;gap:8px;padding:8px 0}
+  .topbar{height:auto}
+  .topbarInner #toast{width:100%;max-width:none}
+  .diagramToolbar{display:block}
+  .diagramActions{margin-top:10px}
+  .diagramViewport{height:430px;min-height:430px}
+}
+/* Keep the run drawer entirely hidden until explicitly opened. */
+.diagram-view .rightbar{visibility:hidden;opacity:0;pointer-events:none;transform:translateX(-14px);transition:transform .2s,opacity .2s,visibility .2s}
+.diagram-view .rightbar.drawerOpen{visibility:visible;opacity:1;pointer-events:auto;transform:translateX(0)}
+@media(max-width:900px){.sidebar{max-height:360px;overflow-y:auto}.sidebarNav{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebarNav .eyebrow{grid-column:1/-1}.sidebarNav button{justify-content:center}.sidebarStepNav #sidebarStepList{max-height:120px}}
+
+/* Monochrome canvas workspace. */
+.diagramMode{position:relative;border:1px solid #d8d8d8;border-radius:20px;box-shadow:0 18px 48px #00000012;background:#fff}
+.diagramToolbar{position:relative;z-index:8;background:#fff;padding:16px 19px}
+.diagramToolbar h2{font-size:18px;letter-spacing:-.02em}
+.diagramToolbar p{font-size:12px;line-height:1.6}
+.diagramActions>button{background:#fff;border-color:#d9d9d9;font-size:11px;font-weight:700}
+#diagramFullscreenBtn[aria-pressed=true]{background:#232323;color:#fff;border-color:#232323}
+.diagramViewport{height:min(66vh,650px);min-height:500px;max-height:none;direction:ltr;cursor:grab;overscroll-behavior:contain;background-color:#fbfbfb;background-image:radial-gradient(circle,#cbcbcb 1.25px,transparent 1.5px);background-size:23px 23px;background-position:10px 10px}
+.diagramViewport.panning{cursor:grabbing}
+.diagramCanvas{min-height:100%;direction:ltr}
+.diagramLinks{pointer-events:none;z-index:1}
+.diagramLink{stroke:#333;stroke-width:2.5;stroke-linecap:round;filter:none}
+.diagramLink.link-error,.diagramLink.link-no{stroke:#777;stroke-dasharray:7 5}
+.diagramLink.link-body{stroke:#555}
+.diagramLinkHit{fill:none;stroke:transparent;stroke-width:20;pointer-events:stroke;cursor:pointer}
+.diagramLinkGroup:hover .diagramLink,.diagramLinkGroup.active .diagramLink{stroke:#000;stroke-width:4;filter:drop-shadow(0 1px 2px #00000036)}
+.diagramWirePreview{fill:none;stroke:#171717;stroke-width:3;stroke-linecap:round;stroke-dasharray:8 6;pointer-events:none}
+.diagramNode{width:280px;min-height:185px;border:1px solid #cfcfcf;border-radius:15px;background:#fff;box-shadow:0 8px 22px #00000016;cursor:default;transition:box-shadow .16s,border-color .16s,transform .16s}
+.diagramNode:hover{border-color:#888;box-shadow:0 14px 32px #00000020}
+.diagramNode.selected,.diagramNode.inFocus{border-color:#333;box-shadow:0 0 0 2px #333,0 12px 30px #00000022}
+.diagramNode.selected.inFocus{box-shadow:0 0 0 2px #111,0 12px 30px #00000022}
+.diagramNode.current{outline:2px dashed #666;outline-offset:3px}
+.diagramNode.moving{z-index:6;transform:rotate(-1deg);box-shadow:0 22px 42px #00000038}
+.diagramNode.connectTarget,.diagramNode.wireHover{border-color:#111;outline:2px dashed #333;outline-offset:4px}
+.diagramNode.connectTarget .diagramInput,.diagramNode.wireHover .diagramInput{background:#111;color:#fff;transform:scale(1.25)}
+.diagramNodeHead{min-height:47px;padding:9px 11px;gap:7px;border-bottom:1px solid #e5e5e5;background:#f2f2f2!important;cursor:grab;touch-action:none}
+.diagramNodeHead:active{cursor:grabbing}
+.diagramNodeHead strong{flex:1;min-width:0;font-size:12px;font-weight:800}
+.diagramNodeNumber{display:grid;place-items:center;width:27px;height:27px;flex:none;border-radius:8px;background:#242424;color:#fff;direction:ltr;font:800 10px ui-monospace,monospace}
+.diagramNodeHead b{flex:none;background:#fff;color:#333;border:1px solid #d4d4d4;font-size:9px;letter-spacing:.02em}
+.diagramNode.condition .diagramNodeNumber{background:#4b4b4b}
+.diagramNode.foreach .diagramNodeNumber{background:#666}
+.diagramNode.manual .diagramNodeNumber{background:#7a7a7a}
+.diagramNodeSummary{padding:12px 13px 8px;font-size:11px;line-height:1.5;color:#666;min-height:37px}
+.diagramNodeActions{padding:0 12px 10px;align-items:center}
+.diagramNodeActions button{border-color:#ddd;background:#fafafa;padding:6px 9px;font-size:10px;font-weight:700}
+.diagramNodeActions .diagramSettingsButton{background:#252525;color:#fff;border-color:#252525}
+.diagramNodeActions .diagramSettingsButton:hover{background:#000}
+.diagramNodeMeta{padding:0 12px 9px}
+.diagramPorts{display:grid;padding:10px 12px 12px;gap:7px;background:#fafafa;border-top:1px solid #e9e9e9;border-radius:0 0 15px 15px}
+.diagramPortRow{gap:6px}
+.diagramPort{cursor:crosshair;touch-action:none;border:1px solid #dedede;border-radius:8px;background:#fff!important;padding:7px 9px 7px 24px;color:#252525!important;font-size:10px;font-weight:700}
+.diagramPort:hover{border-color:#333;background:#eee!important}
+.diagramPort::after{width:10px;height:10px;left:7px;background:#333;border-color:#333;box-shadow:0 0 0 3px #fff}
+.diagramPort.port-error::after,.diagramPort.port-no::after{background:#fff;border-color:#555}
+.diagramDisconnect{height:29px;width:28px;border-radius:8px;color:#555}
+.diagramInput{top:76px;right:-12px;width:24px;height:24px;border:2px solid #252525;box-shadow:0 0 0 3px #fbfbfb;transition:transform .14s,background .14s}
+.diagramInput:hover{transform:scale(1.2);background:#222;color:#fff}
+.diagramDock{position:absolute;left:50%;bottom:56px;z-index:7;display:flex;align-items:center;gap:8px;transform:translateX(-50%);padding:7px;background:#fff;border:1px solid #d6d6d6;border-radius:15px;box-shadow:0 10px 35px #0000002b;white-space:nowrap}
+.diagramDock button{font-weight:700;font-size:12px;padding:10px 13px}
+.diagramDock .diagramAddBtn{background:#252525;color:#fff;border-color:#252525}
+.diagramDock .diagramAddBtn:hover{background:#000}
+.diagramDockDivider{height:25px;width:1px;background:#ddd}
+.diagramDockTip{font-size:10px;color:#777;padding:0 8px}
+.diagramPalette{position:absolute;left:50%;bottom:125px;z-index:12;transform:translateX(-50%);width:min(380px,calc(100% - 26px));max-height:min(480px,65vh);overflow:hidden;display:flex;flex-direction:column;gap:9px;padding:13px;border:1px solid #cfcfcf;border-radius:16px;background:#fff;box-shadow:0 20px 60px #00000038;direction:rtl}
+.diagramPaletteHead{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.diagramPaletteHead button{width:27px;height:27px;padding:0;font-size:18px}
+.diagramPalette input{margin:0}
+.diagramPaletteList{display:grid;gap:5px;overflow-y:auto;scrollbar-color:#aaa #f5f5f5}
+.diagramPaletteItem{display:grid;grid-template-columns:60px 1fr;align-items:center;column-gap:8px;row-gap:2px;text-align:right;white-space:normal;cursor:grab;padding:9px;border:1px solid #e3e3e3;border-radius:10px;background:#fff}
+.diagramPaletteItem:hover{border-color:#777;background:#f5f5f5}
+.diagramPaletteItem b{grid-row:1/3;font:800 10px ui-monospace,monospace;text-align:center;color:#fff;background:#333;border-radius:6px;padding:7px 4px}
+.diagramPaletteItem span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:800}
+.diagramPaletteItem small{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;direction:ltr;text-align:right;font-size:10px}
+.diagramPalette .hint{margin:0;font-size:10px}
+.diagramLinkMenu{position:fixed;z-index:130;display:flex;align-items:center;gap:7px;max-width:290px;padding:7px;border:1px solid #aaa;border-radius:11px;background:#fff;box-shadow:0 14px 35px #00000035;direction:rtl}
+.diagramLinkMenu span{font-size:10px;font-weight:700;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.diagramLinkMenu button{padding:6px 7px;font-size:10px}
+.diagramLinkMenu #diagramLinkDelete{background:#222;color:#fff;border-color:#222}
+.diagramEmpty{top:130px;right:200px;width:340px;padding:28px;border:1px dashed #c5c5c5;border-radius:17px;background:#ffffffd9}
+.diagramLegend{min-height:43px;background:#fff;flex-wrap:wrap}
+body.diagramFullscreenActive{overflow:hidden}
+.diagramMode.diagramFullscreen{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;width:100vw;height:100dvh;border:0;border-radius:0;box-shadow:none}
+.diagramFullscreen .diagramToolbar{flex:none}
+.diagramFullscreen .diagramViewport{flex:1;height:auto;min-height:0;max-height:none}
+.diagramFullscreen .diagramLegend{flex:none}
+.diagram-view:has(.diagramFullscreen) #stepPanel.inspectorOpen{z-index:140;right:20px;left:auto;top:86px;bottom:20px;width:min(470px,calc(100vw - 40px))}
+.diagram-view:has(.diagramFullscreen) .rightbar.drawerOpen{z-index:140}
+@media(max-width:900px){.diagramToolbar{display:block}.diagramActions{margin-top:10px}.diagramDockTip{display:none}.diagramDock{bottom:52px}.diagramPalette{bottom:115px}.diagram-view:has(.diagramFullscreen) #stepPanel.inspectorOpen{right:10px;left:10px;top:75px;width:auto}}
+
+/* Per-step semantic colors stay on the small chips and card headers. */
+.tone-primary,[data-tone=primary]{--tone-bg:#e9f1ff;--tone-fg:#174d9c;--tone-edge:#bdd2f6;--tone-solid:#245bb2}
+.tone-success,[data-tone=success]{--tone-bg:#e7f6ed;--tone-fg:#17613b;--tone-edge:#b9dfc7;--tone-solid:#20804d}
+.tone-warning,[data-tone=warning]{--tone-bg:#fff2d9;--tone-fg:#77500f;--tone-edge:#f0d79e;--tone-solid:#a86b13}
+.tone-danger,[data-tone=danger]{--tone-bg:#feeaea;--tone-fg:#9b2a35;--tone-edge:#efbfc4;--tone-solid:#b83542}
+.tone-secondary,[data-tone=secondary]{--tone-bg:#f0ebf8;--tone-fg:#604781;--tone-edge:#d6c7e8;--tone-solid:#765796}
+.stepToneField{margin:12px 0 16px}.stepToneField>strong{display:block;font-size:12px;color:#484848;margin-bottom:8px}.stepToneChips{display:flex;flex-wrap:wrap;gap:7px}.stepToneChips button{padding:7px 10px;background:var(--tone-bg);color:var(--tone-fg);border:1px solid var(--tone-edge);font-size:11px;font-weight:800}.stepToneChips button[aria-checked=true]{box-shadow:0 0 0 2px var(--tone-solid);border-color:var(--tone-solid)}.stepToneChips button:focus-visible{outline:2px solid var(--tone-solid);outline-offset:2px}
+.stepColorChip{flex:none;border-radius:7px;padding:5px 7px;background:var(--tone-bg);color:var(--tone-fg);border:1px solid var(--tone-edge);font-size:10px;font-weight:800}
+.diagramNode .diagramNodeHead{background:var(--tone-bg)!important;border-bottom-color:var(--tone-edge)}.diagramNode .diagramNodeNumber{background:var(--tone-solid);color:#fff}.diagramNode .diagramKindChip{background:#fff;color:var(--tone-fg);border-color:var(--tone-edge)}
+.diagramNodeMeta .diagramInputChip{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:4px 7px;background:var(--tone-bg);color:var(--tone-fg);border:1px solid var(--tone-edge);font-size:10px;font-weight:700;cursor:pointer}.diagramNodeMeta .diagramInputChip:hover{background:#fff;border-color:var(--tone-solid)}
+.requestInputList{display:grid;gap:6px;margin-top:12px}.requestInputRow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:8px;background:#fff;border:1px solid #e2e2e2;border-radius:9px}.requestInputRow strong{min-width:100px;flex:1;font-size:11px;overflow-wrap:anywhere;direction:ltr;text-align:left}.requestInputRow code{flex:1;min-width:95px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#444}.requestInputRow button{padding:5px 7px;font-size:10px}.requestInputRow .hint{margin:0}

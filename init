@@ -1,0 +1,26 @@
+# /init — شروع همکاری در Flow Studio
+
+این فایل، نقطهٔ شروع خواندن مخزن است؛ یک فرمان اجرایی یا slash command نصب‌شده نیست.
+
+1. [`design.md`](design.md) را برای هدف، معماری و رفتار فعلی بخوانید.
+2. [`docs/decisions.md`](docs/decisions.md) را برای تصمیم‌های همین جلسه بخوانید.
+3. [`docs/collaboration.md`](docs/collaboration.md) را برای تقسیم کار، شاخه‌ها و ادغام بخوانید.
+4. [`docs/publication-security.md`](docs/publication-security.md) را پیش از هر commit یا push عمومی بخوانید.
+5. [`README.fa.md`](README.fa.md) را برای راه‌اندازی و کاربری بخوانید.
+
+## اجرای محلی
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python -m studio --host 127.0.0.1 --port 8765 --db data/studio.sqlite3
+```
+
+برنامه در `http://127.0.0.1:8765/` باز می‌شود. هر همکار پایگاه دادهٔ محلی خودش را دارد؛ `data/` وارد Git نمی‌شود. برای آزمون کد:
+
+```bash
+python3 -m unittest discover -s tests -v
+git diff --check
+```
+
+وضعیت این نسخه: رابط فهرست و دیاگرام، اجرای شرط و حلقه، متغیرها، تاریخچهٔ کامل و preset قرارداد v2 در کد وجود دارند. پیش از شروع کار جدید `git status --short` را ببینید و تغییرات دیگران را بازنویسی نکنید. آزمون کامل عمومی با transport شبیه‌سازی‌شده وجود دارد؛ اجرای انتهابه‌انتهای واقعی CLM بدون هویت و OTP آزمایشی تأیید نشده است.

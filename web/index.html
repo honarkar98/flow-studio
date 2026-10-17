@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flow Studio — استودیوی فلو API</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/diagram.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbarInner">
+    <div class="brand"><span class="brandIcon">⌁</span><span><strong>Flow Studio</strong><small>طراحی و اجرای فلوهای API</small></span></div>
+    <div class="topProject"><label>پروژه <select id="projectSelect"></select></label><button id="newProjectBtn" class="iconButton" title="پروژهٔ جدید" aria-label="پروژهٔ جدید">＋</button></div>
+    <button id="drawerToggle" class="drawerToggle" hidden>متغیرها و اجرا <span>↙</span></button>
+    <span id="toast" role="status"></span>
+    </div>
+  </header>
+  <main id="workspace" class="workspace">
+    <aside class="sidebar" aria-label="پروژه و کاتالوگ API">
+      <nav class="sidebarNav" aria-label="بخش‌های برنامه">
+        <span class="eyebrow">NAVIGATION</span>
+        <button id="sidebarDiagramBtn" type="button">◈ <span>دیاگرام فلو</span></button>
+        <button id="sidebarListBtn" type="button">☷ <span>نمای فهرست</span></button>
+        <button id="sidebarCatalogBtn" type="button">⌕ <span>کاتالوگ API</span></button>
+        <button id="sidebarRunBtn" type="button">◷ <span>متغیرها و اجرا</span></button>
+      </nav>
+      <section id="sidebarStepNav" class="sidebarStepNav" aria-label="گام‌های فلو" hidden><div class="sectionTitle"><strong>مسیر فلو</strong><span id="sidebarStepCount" class="badge"></span></div><div id="sidebarStepList"></div></section>
+      <section class="panel projectPanel">
+        <div class="sectionTitle"><div><span class="eyebrow">WORKSPACE</span><h2>پروژه و Swagger</h2></div><span class="decorIcon">◇</span></div>
+        <label>نام پروژه<input id="projectName"></label>
+        <label>آدرس پایهٔ API<input id="baseUrl" dir="ltr" placeholder="http://127.0.0.1:8000"></label>
+        <button id="saveProjectBtn" class="softButton">ذخیرهٔ پروژه</button>
+        <details><summary>تنظیم تازه‌سازی توکن</summary><p>قواعد HTTP و capture را به‌صورت JSON وارد کنید.</p><textarea id="refreshJson" class="code" rows="7" dir="ltr"></textarea><button id="saveRefreshBtn">ذخیرهٔ تنظیم</button></details>
+        <div class="divider"></div>
+        <label>فایل YAML/JSON<input id="schemaFile" type="file" accept=".yaml,.yml,.json,text/yaml,application/json"></label>
+        <label>یا آدرس schema<input id="schemaUrl" dir="ltr" placeholder="http://127.0.0.1:8000/api/schema/?format=json"></label>
+        <button id="importUrlBtn">دریافت از URL</button>
+        <details><summary>چسباندن متن schema</summary><textarea id="schemaText" class="code" rows="6" dir="ltr"></textarea><button id="importTextBtn">وارد کردن متن</button></details>
+        <p id="schemaDiff" class="hint"></p>
+      </section>
+      <section class="panel operations">
+        <div class="sectionTitle"><div><span class="eyebrow">API LIBRARY</span><h2>Endpointها</h2></div><span id="operationCount" class="badge"></span></div>
+        <p class="hint">برای افزودن، کلیک کنید یا کارت را روی دیاگرام بکشید.</p>
+        <input id="operationSearch" placeholder="جستجوی مسیر، عنوان یا روش" aria-label="جستجوی endpoint">
+        <div id="operationList" class="scroll"></div>
+      </section>
+    </aside>
+    <div class="center">
+      <section class="panel guide" id="guide">
+        <div class="sectionTitle"><div><span class="eyebrow">شروع سریع</span><h2>فلو را در چهار قدم بسازید</h2></div><button id="hideGuideBtn" class="quiet">بستن راهنما</button></div>
+        <div id="guideSteps" class="guideSteps"></div>
+        <p class="hint">هر بخش را می‌توانید بعداً ویرایش کنید. اطلاعات اجرا و متغیرها روی همین دستگاه ذخیره می‌شوند.</p>
+      </section>
+      <section class="panel flowToolbar" id="flowToolbar">
+        <div class="flowToolbarTop"><div><span class="eyebrow">FLOW BUILDER</span><h2>طراحی فلو</h2></div><div class="viewSwitch" role="group" aria-label="حالت نمایش فلو"><button id="diagramModeBtn" aria-pressed="false">◈ دیاگرام</button><button id="listModeBtn" aria-pressed="true">☷ فهرست</button></div></div>
+        <div class="flowControls"><label>فلوی فعال<select id="flowSelect"></select></label><label>نام فلو<input id="flowName"></label></div>
+        <details class="newFlowDetails"><summary>＋ ساخت فلوی تازه</summary><div class="row"><label>نام فلوی جدید<input id="newFlowName" placeholder="مثلاً ثبت سفارش"></label><button id="newFlowBtn">ساخت فلو</button></div></details>
+        <div class="flowActions"><button id="addHttpBtn">＋ گام HTTP</button><button id="addManualBtn">＋ توقف دستی</button><button id="addConditionBtn">＋ شرط</button><button id="addLoopBtn">＋ حلقه</button><button id="installClmBtn">نمونهٔ CLM v2</button><button id="deleteFlowBtn" class="danger">حذف فلو</button><button id="saveFlowBtn" class="primary">ذخیرهٔ فلو</button></div>
+      </section>
+      <section class="panel listPanel" id="listMode"><div class="sectionTitle"><div><span class="eyebrow">SEQUENCE</span><h2>ترتیب اجرا</h2></div><span id="listCount" class="badge">۰ گام</span></div><p class="hint">روی گام بزنید تا تنظیماتش باز شود. ترتیب اجرا را با دکمه‌ها عوض کنید.</p><div id="stepList" class="steps"></div></section>
+      <section id="diagramMode" class="diagramMode" hidden>
+        <div class="diagramToolbar"><div><span class="eyebrow">VISUAL FLOW</span><h2>نقشهٔ فلو</h2><p>گام‌ها را جابه‌جا کنید؛ خروجی هر کارت را روی ورودی مقصد رها کنید.</p></div><div class="diagramActions"><div class="diagramPager"><button id="diagramPrevBtn" type="button" title="گام قبلی">→</button><span id="diagramPosition">گام ۰ از ۰</span><button id="diagramNextBtn" type="button" title="گام بعدی">←</button></div><button id="diagramFitBtn" type="button">چیدمان خودکار</button><button id="diagramFullscreenBtn" type="button" aria-pressed="false" title="تمام‌صفحه کردن دیاگرام">⛶ تمام‌صفحه</button></div></div>
+        <div id="diagramConnectionHint" class="diagramConnectionHint" role="status" hidden><span id="diagramConnectionText"></span><button id="diagramCancelConnectionBtn" type="button">لغو اتصال · Esc</button></div>
+        <div id="diagramViewport" class="diagramViewport" tabindex="0" aria-label="بوم دیاگرام فلو"><div id="diagramCanvas" class="diagramCanvas"><svg id="diagramLinks" class="diagramLinks" aria-label="اتصال‌های فلو"></svg><div id="diagramEmpty" class="diagramEmpty"><span>◈</span><strong>فلوی خودتان را اینجا بسازید</strong><p>از «افزودن گام» استفاده کنید یا Endpoint را روی بوم بکشید.</p></div></div></div>
+        <div class="diagramDock"><button id="diagramAddBtn" type="button" class="diagramAddBtn" aria-expanded="false">＋ افزودن گام</button><span class="diagramDockDivider"></span><button id="diagramSaveBtn" type="button">ذخیرهٔ فلو</button><span class="diagramDockTip">روی خط بزنید تا اتصال را مدیریت کنید.</span></div>
+        <div id="diagramPalette" class="diagramPalette" hidden><div class="diagramPaletteHead"><strong>افزودن گام</strong><button id="diagramPaletteClose" type="button" aria-label="بستن فهرست گام‌ها">×</button></div><input id="diagramPaletteSearch" type="search" placeholder="جستجوی Endpoint یا نوع گام" aria-label="جستجوی گام"><div id="diagramPaletteList" class="diagramPaletteList"></div><p class="hint">گام را روی بوم بکشید یا روی آن بزنید.</p></div>
+        <div id="diagramLinkMenu" class="diagramLinkMenu" hidden><span id="diagramLinkLabel"></span><button id="diagramLinkDelete" type="button">حذف اتصال</button><button id="diagramLinkClose" type="button" aria-label="بستن ابزار اتصال">×</button></div>
+        <div class="diagramLegend"><span><i class="legendHttp"></i> درخواست HTTP</span><span><i class="legendManual"></i> ورودی دستی، شرط و حلقه</span><span>خط پیوسته مسیر عادی و خط چین مسیر خطا یا خیر است.</span></div>
+      </section>
+      <section class="panel" id="stepPanel">
+        <div class="sectionTitle"><div><span class="eyebrow">STEP SETTINGS</span><h2>ویرایش گام</h2></div><div class="row compact"><span id="stepNumber" class="badge">گامی انتخاب نشده</span><button id="closeInspectorBtn" class="iconButton" aria-label="بستن تنظیمات گام" hidden>×</button></div></div>
+        <p class="hint">ورودی‌ها و خروجی‌ها را با فرم‌های زیر تعریف کنید. ویرایش مستقیم JSON نیز در بخش پیشرفته در دسترس است.</p>
+        <label>نام گام<input id="stepName"></label>
+        <div class="stepToneField"><strong>رنگ سربرگ و چیپ گام</strong><div id="stepToneChips" class="stepToneChips" role="radiogroup" aria-label="رنگ گام"><button type="button" role="radio" data-tone="primary">اصلی</button><button type="button" role="radio" data-tone="success">موفقیت</button><button type="button" role="radio" data-tone="warning">هشدار</button><button type="button" role="radio" data-tone="danger">خطر</button><button type="button" role="radio" data-tone="secondary">ثانویه</button></div><input id="stepTone" type="hidden" value="primary"></div>
+        <div class="row"><label>نوع<select id="stepKind"><option value="http">HTTP</option><option value="manual">توقف دستی</option><option value="condition">شرط</option><option value="foreach">حلقهٔ تکرار</option></select></label><label id="stepMethodLabel">روش<select id="stepMethod"><option>GET</option><option>POST</option><option>PATCH</option><option>PUT</option><option>DELETE</option><option>HEAD</option><option>OPTIONS</option><option>TRACE</option></select></label></div>
+        <label id="stepPathLabel">مسیر endpoint<input id="stepPath" dir="ltr" placeholder="/api/items/{item_id}/"></label>
+        <p id="httpHint" class="hint">در مسیر از <code>{variable_name}</code> و در ورودی‌ها از <code>{{variable_name}}</code> استفاده کنید.</p>
+        <div id="httpFields">
+          <div class="row"><label>نوع بدنه<select id="stepBodyMode"><option value="none">بدون بدنه</option><option value="json">JSON</option><option value="multipart">multipart</option></select></label><label class="checkbox"><input id="stepRefresh" type="checkbox">تازه‌سازی توکن پس از 401</label></div>
+          <div class="quickBuilder"><h3>ورودی درخواست</h3><p class="hint">برای نمونه، محل «Body»، نام فیلد <code>person.mobile</code> و متغیر <code>mobile</code> را انتخاب کنید.</p>
+            <div class="row"><label>محل<select id="quickTarget"><option value="body">Body</option><option value="query">Query</option><option value="headers">Header</option></select></label><label>نام فیلد<input id="quickKey" dir="ltr" placeholder="person.mobile"></label></div>
+            <div class="row"><label>نوع مقدار<select id="quickValueMode"><option value="variable">متغیر</option><option value="literal">مقدار ثابت</option></select></label><label id="quickVariableLabel">متغیر<input id="quickVariable" list="variableSuggestions" dir="ltr" placeholder="mobile"><datalist id="variableSuggestions"></datalist></label><label id="quickLiteralLabel" hidden>مقدار<input id="quickLiteral" dir="ltr" placeholder='"example" یا 123'></label><button id="quickAddBtn">افزودن ورودی</button><button id="quickCancelBtn" type="button" hidden>انصراف از ویرایش</button></div>
+            <div id="requestInputList" class="requestInputList" aria-label="ورودی‌های تعریف‌شده"></div>
+          </div>
+          <div class="quickBuilder"><h3>ذخیرهٔ فیلد پاسخ به‌عنوان متغیر</h3><div class="row"><label>نام متغیر<input id="captureName" dir="ltr" placeholder="tenant_id"></label><label>مسیر در پاسخ<input id="capturePath" dir="ltr" placeholder="results[0].id"></label></div><div class="row"><label class="checkbox"><input id="captureSensitive" type="checkbox">مقدار حساس است</label><button id="addCaptureBtn">افزودن خروجی</button></div><div id="captureList" class="ruleList"></div></div>
+          <div class="quickBuilder"><h3>بررسی پاسخ</h3><div class="row"><label>مسیر در پاسخ<input id="assertPath" dir="ltr" placeholder="status"></label><label>مقدار مورد انتظار<input id="assertValue" dir="ltr" placeholder='"created"'></label><button id="addAssertBtn">افزودن شرط</button></div><div id="assertList" class="ruleList"></div></div>
+          <div class="uploadBox"><strong>فایل multipart</strong><div class="row"><label>نام فیلد در API<input id="uploadFieldName" dir="ltr" value="file"></label><label>فایل<input id="stepUploadFile" type="file"></label><button id="uploadStepFileBtn">افزودن فایل</button></div></div>
+          <details id="advancedStep" class="advanced"><summary>ویرایش پیشرفتهٔ JSON</summary>
+            <label>Query<textarea id="stepQuery" class="code" rows="3" dir="ltr"></textarea></label>
+            <label>Headerها<textarea id="stepHeaders" class="code" rows="3" dir="ltr"></textarea></label>
+            <label>Body<textarea id="stepBody" class="code" rows="6" dir="ltr"></textarea></label>
+            <label>فایل‌های multipart؛ نام فیلد به مسیر فایل<textarea id="stepFiles" class="code" rows="3" dir="ltr"></textarea></label>
+            <label>برداشت خروجی؛ آرایهٔ <code>{name,path,sensitive}</code><textarea id="stepCaptures" class="code" rows="4" dir="ltr"></textarea></label>
+            <label>شرط‌ها؛ آرایهٔ <code>{path,equals}</code><textarea id="stepAssertions" class="code" rows="3" dir="ltr"></textarea></label>
+          </details>
+        </div>
+        <div id="manualFields" hidden><label>نام متغیرهای ورودی دستی، با کاما جدا کنید<input id="manualNames" dir="ltr"></label><label>نام متغیرهای حساس، با کاما جدا کنید<input id="manualSensitive" dir="ltr"></label></div>
+        <div id="conditionFields" hidden><p class="hint">مقدار متغیر را بررسی کنید و مسیر «بله» یا «خیر» را انتخاب کنید.</p><label>نام متغیر<input id="conditionVariable" dir="ltr" list="variableSuggestions" placeholder="status"></label><label>مسیر داخل مقدار (اختیاری)<input id="conditionPath" dir="ltr" placeholder="result.state"></label><div class="row"><label>عملگر<select id="conditionOperator"><option value="equals">برابر است با</option><option value="not_equals">برابر نیست با</option><option value="truthy">درست / دارای مقدار</option><option value="exists">وجود دارد</option><option value="contains">شامل می‌شود</option><option value="greater">بزرگ‌تر است از</option><option value="less">کوچک‌تر است از</option></select></label><label>مقدار مقایسه<input id="conditionValue" dir="ltr" placeholder='"approved"'></label></div></div>
+        <div id="loopFields" hidden><p class="hint">هر عضو آرایه در متغیر «عضو جاری» ذخیره می‌شود. آخرین گام بدنه را به همین حلقه وصل کنید.</p><label>متغیر آرایه<input id="loopListVariable" dir="ltr" list="variableSuggestions" placeholder="items"></label><div class="row"><label>نام متغیر عضو جاری<input id="loopItemVariable" dir="ltr" value="item"></label><label>نام متغیر شمارهٔ عضو<input id="loopIndexVariable" dir="ltr" value="item_index"></label></div><label>حداکثر تعداد تکرار<input id="loopMax" inputmode="numeric" value="1000"></label></div>
+        <div id="routeFields" class="routeFields"><h3>اتصال به گام بعدی</h3><p class="hint">در دیاگرام نیز می‌توانید از خروجی رنگی به کارت مقصد وصل شوید.</p><div id="routeControls"></div></div>
+        <div class="row stepActions"><button id="saveStepBtn" class="primary">ذخیرهٔ گام</button><button id="previewBtn">پیش‌نمایش</button><button id="stepCurlBtn">نمایش cURL</button><button id="deleteStepBtn" class="danger">حذف گام</button></div>
+        <pre id="previewOutput" class="code output"></pre>
+      </section>
+    </div>
+    <aside id="rightbar" class="rightbar" aria-label="متغیرها و اجرای فلو">
+      <div class="drawerHead"><strong>متغیرها و اجرا</strong><button id="closeDrawerBtn" class="iconButton" aria-label="بستن پنل">×</button></div>
+      <section class="panel variablesPanel">
+        <div class="sectionTitle"><div><span class="eyebrow">DATA</span><h2>متغیرها</h2></div><button id="newVariableBtn" class="iconButton" title="افزودن متغیر" aria-label="افزودن متغیر">＋</button></div>
+        <label class="checkbox small"><input id="revealVariables" type="checkbox">نمایش مقدارهای حساس</label>
+        <div id="variableList"></div>
+      </section>
+      <section class="panel">
+        <div class="sectionTitle"><div><span class="eyebrow">RUNNER</span><h2>اجرا</h2></div><span id="runStatus" class="badge">آماده</span></div>
+        <div id="runProgress" class="runProgress"></div>
+        <label>شروع از گام<select id="startIndex"></select></label>
+        <label class="checkbox"><input id="acknowledgePost" type="checkbox">تکرار POSTهای موفق را تأیید می‌کنم</label>
+        <button id="startRunBtn" class="primary">ایجاد اجرای جدید</button>
+        <label>اجرای ذخیره‌شده<select id="runSelect"></select></label>
+        <p id="runInfo" class="hint"></p>
+        <button id="openManualBtn" class="softButton" hidden>ورودی دستی این گام</button>
+        <button id="advanceBtn">اجرا / ادامه از نقطهٔ ذخیره‌شده</button>
+      </section>
+      <section class="panel timelinePanel">
+        <div class="sectionTitle"><div><span class="eyebrow">RUN LOG</span><h2>درخواست‌ها و پاسخ‌ها</h2></div><label class="checkbox small"><input id="revealTimeline" type="checkbox">نمایش داده‌های حساس</label></div>
+        <p class="hint">همهٔ تلاش‌ها، از جمله خطا و تازه‌سازی توکن، به ترتیب ثبت می‌شوند.</p>
+        <div id="timeline"></div>
+      </section>
+    </aside>
+  </main>
+  <dialog id="variableDialog" class="appDialog"><div class="dialogHead"><div><span class="eyebrow">VARIABLE</span><h2 id="variableDialogTitle">تعریف متغیر</h2></div><button id="closeVariableBtn" class="iconButton" aria-label="بستن">×</button></div><p id="variableDialogHint" class="hint"></p><label>نام متغیر<input id="variableName" dir="ltr" placeholder="access_token" autocomplete="off"></label><label>مقدار متن یا JSON<textarea id="variableValue" rows="5" dir="ltr" placeholder='"09xxxxxxxxx" یا {"id": 1}'></textarea></label><label class="checkbox"><input id="variableSensitive" type="checkbox">حساس است؛ در گزارش‌ها پوشیده شود</label><div class="dialogActions"><button id="cancelVariableBtn">انصراف</button><button id="saveVariableBtn" class="primary">ذخیرهٔ متغیر</button></div></dialog>
+  <dialog id="manualDialog" class="appDialog"><div class="dialogHead"><div><span class="eyebrow">INPUT REQUIRED</span><h2>ورودی دستی گام</h2></div><button id="closeManualBtn" class="iconButton" aria-label="بستن">×</button></div><p id="manualDialogHint" class="hint">مقدارهای این گام را وارد کنید تا اجرا ادامه یابد.</p><div id="manualInputs"></div><div class="dialogActions"><button id="cancelManualBtn">بعداً</button><button id="submitManualBtn" class="primary">ثبت و ادامهٔ اجرا</button></div></dialog>
+  <dialog id="curlDialog" class="appDialog curlDialog"><div class="dialogHead"><div><span class="eyebrow">REQUEST</span><h2>دستور cURL</h2></div><button id="closeCurlBtn" class="iconButton" aria-label="بستن">×</button></div><p id="curlHint" class="hint">دستور بر اساس درخواست نمایش‌داده‌شده ساخته شده است.</p><pre id="curlOutput" class="code" dir="ltr"></pre><div class="dialogActions"><button id="copyCurlBtn" class="primary">کپی cURL</button><button id="doneCurlBtn">بستن</button></div></dialog>
+</body>
+</html>
